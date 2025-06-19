@@ -1,0 +1,258 @@
+[gd_scene load_steps=3 format=3 uid="uid://doaeotrw5a715"]
+
+[ext_resource type="Texture2D" uid="uid://cr6fbcaeildd4" path="res://interface/assets/inventory/inventory_grid.png" id="1_bhb8s"]
+[ext_resource type="Texture2D" uid="uid://c5q45j1bme4fx" path="res://collectables_by_drop/pink_star/pink_star/pink_star_legs.png" id="2_wb17f"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGrid" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -45.0
+offset_right = 79.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bhb8s")
+
+[node name="SlotsContainer" type="GridContainer" parent="InventoryGrid"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -34.0
+offset_right = 70.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
+
+[node name="Slot1" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot1"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot2" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot2"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot3" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot3"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot4" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot4"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot5" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot5"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot6" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot6"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot7" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot7"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot8" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot8"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot9" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot9"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot10" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot10"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot11" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot11"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot12" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot12"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot13" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot13"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot14" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot14"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot15" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot15"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot16" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot16"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot17" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot17"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Slot18" type="Button" parent="InventoryGrid/SlotsContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="InventoryGrid/SlotsContainer/Slot18"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("2_wb17f")
+expand_mode = 1
+stretch_mode = 5
