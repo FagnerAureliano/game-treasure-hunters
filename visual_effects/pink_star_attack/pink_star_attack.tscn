@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqa31qekmle0q"]
+
+[ext_resource type="PackedScene" uid="uid://dhwowdep2m6j6" path="res://visual_effects/components/base_effect.tscn" id="1_k0sw4"]
+[ext_resource type="Texture2D" uid="uid://cu4rw4kqdg1t0" path="res://visual_effects/pink_star_attack/1.png" id="2_d8efy"]
+[ext_resource type="Texture2D" uid="uid://d257vl2vkdq05" path="res://visual_effects/pink_star_attack/2.png" id="3_7rcp1"]
+[ext_resource type="Texture2D" uid="uid://clnmuc52m3q7m" path="res://visual_effects/pink_star_attack/3.png" id="4_udv5q"]
+[ext_resource type="Texture2D" uid="uid://ceblv85vfesh3" path="res://visual_effects/pink_star_attack/4.png" id="5_tavq2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8gmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d8efy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7rcp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_udv5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tavq2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="PinkStarAttack" instance=ExtResource("1_k0sw4")]
+sprite_frames = SubResource("SpriteFrames_x8gmo")
+frame = 3
+frame_progress = 1.0

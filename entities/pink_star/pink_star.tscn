@@ -234,6 +234,8 @@ flip_h = true
 _last_attack_frame = 3
 _initial_run_frame = 2
 _last_run_frame = 5
+_x_attack_offset = 8.0
+_y_attack_offset = 8.0
 
 [node name="Collision" parent="." index="1"]
 position = Vector2(0, 4)
@@ -251,6 +253,7 @@ shape = SubResource("CircleShape2D_otrxf")
 disabled = true
 
 [node name="Collision" parent="DetectionArea" index="0"]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_1h18s")
 

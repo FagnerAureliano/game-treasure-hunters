@@ -11,6 +11,8 @@ var _on_action: bool = false
 @export var _last_attack_frame: int
 @export var _initial_run_frame: int
 @export var _last_run_frame: int
+@export var _x_attack_offset: float
+@export var _y_attack_offset: float
 
 func animate(_velocity: Vector2) -> void:
 	if _on_action:
@@ -56,6 +58,10 @@ func _on_frame_changed() -> void:
 				Vector2(0,4), global_position, _is_fliped)
 				 
 	if animation == "attack":
+		if frame == 0:
+			global.spawn_effect(
+				"res://visual_effects/pink_star_attack/pink_star_attack.tscn", 
+				Vector2(_x_attack_offset, _y_attack_offset), global_position, flip_h)
 		if frame == 0 or  frame == 1:
 			_attack_area_collision.disabled = false
 		if frame == _last_attack_frame:
