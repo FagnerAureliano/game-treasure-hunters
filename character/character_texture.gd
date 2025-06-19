@@ -40,7 +40,7 @@ func _verify_direction(_direction: float) -> void:
 		flip_h = true
 		_attack_area_colision.position.x = -24
 
-func action_animaton(_action_name: String) -> void:
+func action_animation(_action_name: String) -> void:
 	_is_on_action = true
 	if _action_name == "throw_sword":
 		play(_action_name)

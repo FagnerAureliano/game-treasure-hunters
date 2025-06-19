@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 class_name BaseCharacter
-
+var _can_play_dead_ground_animation: bool = true
+var _on_knockback: bool = false
 var _has_sword: bool = false
 var _on_floor: bool = true
+var _is_alive: bool = true
+
 var _jump_count = 0
 var _attack_index: int = 1
 var _air_attack_count: int = 0
@@ -11,36 +14,60 @@ var _air_attack_count: int = 0
 const _THROWABLE_SWORD: PackedScene = preload("res://throwables/character_sword/character_sword.tscn")
 
 @export_category('Variables')
-@export var _speed: float = 150.0
+@export var _speed: float = 200.0
 @export var _jump_velocity: float = -300.0
 @export var _attack_combo: Timer
 @export var _character_health: int = 10
+@export var _knockback_speed: float = 200.0
 
 @export_category("Objects")
-@export var _character: CharacterTexture
+@export var _character_texture: CharacterTexture
+@export var _knockback_timer: Timer
+
+func _process(_delta: float) -> void:
+	if _on_knockback: 
+		move_and_slide()
 
 func _physics_process(delta: float) -> void: 
 	_vertical_movement(delta) 
+	if _is_alive == false or _on_knockback: 
+		move_and_slide()
+		return
+	
 	_horizontal_movement()  
 	_attack_handler()
 	
 	move_and_slide()
 	
-	_character.animate(velocity)
+	_character_texture.animate(velocity)
 
-func _vertical_movement(_delta: float) -> void:
-	# Add the gravity.
+func _vertical_movement(_delta: float) -> void: 
 	if is_on_floor():  
+		if _is_alive == false:
+			if _can_play_dead_ground_animation:
+				_character_texture.action_animation("dead_ground")
+				_can_play_dead_ground_animation = false
+				#_collision.disabled = true
+				set_collision_layer_value(1,false)
+				set_collision_mask_value(1,false)
+				set_collision_layer_value(2,true)
+				set_collision_mask_value(2,true)
+				
+			velocity.x = 0
+			return
+			
 		if _on_floor == false:
+			_air_attack_count = 0
 			global.spawn_effect(
 				"res://visual_effects/dust_particles/fall/fall_effect.tscn", 
-				Vector2(0,2), global_position, false)
-			_character.action_animaton("land")
+				Vector2(0,2), global_position, false
+			)
+			
+			_character_texture.action_animation("land")
 			set_physics_process(false)
 			_on_floor = true
 		
-		_jump_count = 0
-		_air_attack_count = 0
+		_jump_count = 0 
 	
 	if not is_on_floor():
 		if is_on_floor:
@@ -56,7 +83,7 @@ func _vertical_movement(_delta: float) -> void:
 		velocity.y = _jump_velocity
 		global.spawn_effect(
 			"res://visual_effects/dust_particles/jump/jump_effect.tscn", 
-			Vector2(0,2), global_position, _character.flip_h) 
+			Vector2(0,2), global_position, _character_texture.flip_h) 
 	
 	
 func _horizontal_movement() -> void:
@@ -72,7 +99,7 @@ func _attack_handler() -> void:
 	if not _has_sword:
 		return
 	if Input.is_action_just_pressed("throw"):
-		_character.action_animaton("throw_sword")
+		_character_texture.action_animation("throw_sword")
 		set_physics_process(false)
 		update_sword_state(false)
 		_has_sword = false 
@@ -101,31 +128,49 @@ func throw_sword(_is_flipped:bool) -> void:
 
 func update_sword_state(_state: bool) -> void:
 	_has_sword = _state
-	_character.update_suffix(_has_sword)
+	_character_texture.update_suffix(_has_sword)
 	
 func update_health(_value: int, _entity) -> void:
+	_knockback(_entity)
+	_knockback_timer.start()
 	_character_health -= _value
+	
 	if _character_health <= 0:
-		pass
-	pass
+		_is_alive = false
+		update_sword_state(false)
+		_character_texture.action_animation("dead_hit")
+		return
+	_character_texture.action_animation("hit")
+
+func _knockback(_entity: BaseEnemy) -> void:
+	var _knockback_direction: Vector2 = _entity.global_position.direction_to(global_position)
+	velocity.x = _knockback_direction.x * _knockback_speed
+	velocity.y = -1 * _knockback_speed
+	_on_knockback = true
 
 func _attack_animation_handler(_prefix:String, _index_limit: int, _on_air: bool = false) -> void:
 	global.spawn_effect(
 			"res://visual_effects/sword/" +
 			_prefix  + str(_attack_index) +
 			"/" + _prefix   + str(_attack_index) + ".tscn", 
-			Vector2(24,0), global_position, _character.flip_h)
-	
-	_character.action_animaton(_prefix + str(_attack_index))
+			Vector2(24,0), global_position, _character_texture.flip_h)
+
+	_character_texture.action_animation(_prefix + str(_attack_index))
 	_attack_index += 1 
 	if _attack_index == _index_limit:
 		_attack_index = 1
-		
+
 	if _on_air:
 		_air_attack_count += 1
 	
 	set_physics_process(false)
 	_attack_combo.start()
-	
+
 func _on_attack_combo_timeout() -> void:
 	_attack_index = 1
+
+func _on_knockback_timer_timeout() -> void:
+	_on_knockback = false
+
+func is_player_alive() -> bool:
+	return _is_alive

@@ -28,7 +28,7 @@ func animate(_velocity: Vector2) -> void:
 	play("idle")
 
 func action_animate(_action: String) -> void:
-	$"..".set_physics_process(false)
+	_enemy.set_physics_process(false)
 	_on_action = true
 	play(_action)
 
@@ -39,7 +39,7 @@ func _on_animation_finished() -> void:
 		return
 		
 	_on_action = false
-	$"..".set_physics_process(true)
+	_enemy.set_physics_process(true)
 
 
 func _on_frame_changed() -> void:
