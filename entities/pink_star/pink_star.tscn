@@ -223,7 +223,7 @@ radius = 18.0
 
 [node name="PinkStar" instance=ExtResource("1_nvbau")]
 script = ExtResource("2_uep72")
-_pink_star_enemy = true
+is_pink_star = true
 _enemy_types = 2
 
 [node name="Texture" parent="." index="0"]
@@ -232,6 +232,8 @@ animation = &"idle"
 autoplay = "idle"
 flip_h = true
 _last_attack_frame = 3
+_initial_run_frame = 2
+_last_run_frame = 5
 
 [node name="Collision" parent="." index="1"]
 position = Vector2(0, 4)

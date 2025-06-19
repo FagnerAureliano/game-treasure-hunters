@@ -21,7 +21,7 @@ var _can_play_dead_ground_animation: bool = true
 @export var _knockback_timer: Timer
 
 @export_category("Variables")
-@export var _pink_star_enemy: bool = false
+@export var is_pink_star: bool = false
 @export var _enemy_types: _types
 @export var _move_speed: float = 128.0
 @export var _knockback_speed: float = 256.0
@@ -88,7 +88,7 @@ func _wandering() -> void:
 
 func _update_direction() -> void: 
 	_direction.x =  -_direction.x 
-	if _pink_star_enemy:
+	if is_pink_star:
 		if _direction.x > 0:
 			_enemy_texture.flip_h = true
 			
