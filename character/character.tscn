@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://celbgvgemyqia"]
+[gd_scene load_steps=76 format=3 uid="uid://celbgvgemyqia"]
 
 [ext_resource type="Texture2D" uid="uid://c5qhrk0rbvm7f" path="res://character/without_sword/idle/1.png" id="1_0rvpn"]
 [ext_resource type="Script" uid="uid://dgfmpfvfu82i0" path="res://character/character.gd" id="1_o6jyn"]
@@ -71,6 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://dmvum0lyssb06" path="res://character/with_sword/throw_sword/2.png" id="52_dg8ty"]
 [ext_resource type="Texture2D" uid="uid://bev0dhx6nack3" path="res://character/with_sword/throw_sword/3.png" id="53_ewpg8"]
 [ext_resource type="Script" uid="uid://b45jlta40wimp" path="res://character/character_attack_area.gd" id="55_dg8ty"]
+[ext_resource type="Script" uid="uid://4fw4dermdrln" path="res://character/character_inventory.gd" id="72_xdtjf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qkjfd"]
 animations = [{
@@ -385,9 +386,10 @@ size = Vector2(18, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpbs7"]
 radius = 16.0
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_attack_combo", "_character_texture", "_knockback_timer")]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_inventory", "_attack_combo", "_character_texture", "_knockback_timer")]
 script = ExtResource("1_o6jyn")
 _speed = 150.0
+_inventory = NodePath("CharacterInventory")
 _attack_combo = NodePath("AttackCombo")
 _character_texture = NodePath("Texture")
 _knockback_timer = NodePath("KnockbackTimer")
@@ -399,6 +401,7 @@ script = ExtResource("19_6610h")
 _attack_area_colision = NodePath("../AttackArea/Collision")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_0rvpn")
 
 [node name="AttackCombo" type="Timer" parent="."]
@@ -409,6 +412,7 @@ script = ExtResource("55_dg8ty")
 _attack_damage = 10
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
+visible = false
 position = Vector2(24, 0)
 shape = SubResource("CircleShape2D_wpbs7")
 disabled = true
@@ -416,6 +420,9 @@ disabled = true
 [node name="KnockbackTimer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="CharacterInventory" type="Node" parent="."]
+script = ExtResource("72_xdtjf")
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]

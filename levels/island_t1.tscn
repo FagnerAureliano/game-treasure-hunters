@@ -19,8 +19,8 @@ _knockback_speed = 75.0
 [node name="CollectableSword" parent="." index="3" instance=ExtResource("2_t7ibw")]
 position = Vector2(126, 236)
 
-[node name="CollectableSword2" parent="." index="4" instance=ExtResource("2_t7ibw")]
-position = Vector2(159, 11)
-
 [node name="PinkStar" parent="Enemies" index="0" instance=ExtResource("3_xl1mi")]
 position = Vector2(242, 201)
+
+[node name="PinkStar2" parent="Enemies" index="1" instance=ExtResource("3_xl1mi")]
+position = Vector2(566, 201)

@@ -15,12 +15,13 @@ const _THROWABLE_SWORD: PackedScene = preload("res://throwables/character_sword/
 
 @export_category('Variables')
 @export var _speed: float = 200.0
-@export var _jump_velocity: float = -300.0
-@export var _attack_combo: Timer
+@export var _jump_velocity: float = -300.0 
 @export var _character_health: int = 10
 @export var _knockback_speed: float = 200.0
 
 @export_category("Objects")
+@export var _inventory: CharacterInventory
+@export var _attack_combo: Timer
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
 
@@ -149,8 +150,8 @@ func _knockback(_entity: BaseEnemy) -> void:
 	_on_knockback = true
 	
 func collect_item(_item:Dictionary)-> void: 
-	print("Item coletad" +str(_item))
-
+	print("Item coletad" + str(_item))
+	_inventory.add_item(_item)
 
 func _attack_animation_handler(_prefix:String, _index_limit: int, _on_air: bool = false) -> void:
 	global.spawn_effect(
