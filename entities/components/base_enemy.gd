@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name BaseEnemy
 
+const _COLLECTABLE_ITEM: PackedScene = preload("res://collectables/components/collectable_item.tscn")
 enum _types {
 	STATIC = 0,
 	CHASE = 1,
@@ -125,10 +126,10 @@ func update_health(_damage: int, _entity)-> void:
 	_knockback_timer.start(_hit_knockback_timer)
 	_enemy_texture.action_animate("hit")
 	
-	print(
-		"Inimigo perdeu "+ str(_damage) + 
-		" pontos de vida. Vida atual " + str(_enemy_health)
-	)
+	#print(
+		#"Inimigo perdeu "+ str(_damage) + 
+		#" pontos de vida. Vida atual " + str(_enemy_health)
+	#)
 
 func _knockback(_entity: BaseCharacter) -> void:
 	var _knockback_direction: Vector2 = _entity.global_position.direction_to(global_position)
@@ -145,8 +146,8 @@ func _kill() -> void:
 	for _item in _drop_items_list:
 		var _item_spawn_probability: float = _drop_items_list[_item]["spawn_probability"]
 		var _rng: float = randf()
-		print("Rng do item" + str(_rng))
-		print("Prob do item"+ str( _item_spawn_probability))
+		#print("Rng do item" + str(_rng))
+		#print("Prob do item"+ str( _item_spawn_probability))
 		
 		if _rng < _item_spawn_probability:
 			_drop_item(_item, _drop_items_list[_item])

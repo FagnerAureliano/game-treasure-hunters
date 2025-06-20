@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://b533hsswbgot2"]
+
+[ext_resource type="Texture2D" uid="uid://bih6871hcspf5" path="res://collectables_by_drop/pink_star/pink_star/pink_star_head.png" id="1_l8xum"]
+[ext_resource type="Script" uid="uid://ceph2kben4ea0" path="res://collectables/components/collectable_item.gd" id="1_qb0iv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qb0iv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qb0iv"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdsub"]
+radius = 12.0
+
+[node name="BaseCollectableItem" type="RigidBody2D" node_paths=PackedStringArray("_item_sprite")]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_qb0iv")
+script = ExtResource("1_qb0iv")
+_item_sprite = NodePath("Texture")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qb0iv")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_l8xum")
+
+[node name="CollectableArea" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CollectableArea"]
+shape = SubResource("CircleShape2D_jdsub")
+
+[connection signal="body_entered" from="CollectableArea" to="." method="_on_collectable_area_body_entered"]

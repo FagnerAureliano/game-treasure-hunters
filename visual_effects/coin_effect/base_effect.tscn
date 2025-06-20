@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bag2uthb40vaf"]
+
+[ext_resource type="PackedScene" uid="uid://dhwowdep2m6j6" path="res://visual_effects/components/base_effect.tscn" id="1_piwhf"]
+[ext_resource type="Texture2D" uid="uid://8uojtiqha6y1" path="res://visual_effects/coin_effect/01.png" id="2_rnl2d"]
+[ext_resource type="Texture2D" uid="uid://dg3o3jq43jeya" path="res://visual_effects/coin_effect/02.png" id="3_oisjt"]
+[ext_resource type="Texture2D" uid="uid://cwe4d4rq83764" path="res://visual_effects/coin_effect/03.png" id="4_i3psx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vh2pc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rnl2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oisjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i3psx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CoinEffect" instance=ExtResource("1_piwhf")]
+sprite_frames = SubResource("SpriteFrames_vh2pc")
+frame = 2
+frame_progress = 1.0

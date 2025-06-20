@@ -147,6 +147,10 @@ func _knockback(_entity: BaseEnemy) -> void:
 	velocity.x = _knockback_direction.x * _knockback_speed
 	velocity.y = -1 * _knockback_speed
 	_on_knockback = true
+	
+func collect_item(_item:Dictionary)-> void: 
+	print("Item coletad" +str(_item))
+
 
 func _attack_animation_handler(_prefix:String, _index_limit: int, _on_air: bool = false) -> void:
 	global.spawn_effect(

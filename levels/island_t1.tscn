@@ -13,7 +13,7 @@ layer_0/tile_data = PackedInt32Array(524289, 0, 0, 524290, 65536, 0, 524291, 655
 visible = false
 
 [node name="Character" parent="." index="2"]
-position = Vector2(338, 62)
+position = Vector2(313, 66)
 _knockback_speed = 75.0
 
 [node name="CollectableSword" parent="." index="3" instance=ExtResource("2_t7ibw")]

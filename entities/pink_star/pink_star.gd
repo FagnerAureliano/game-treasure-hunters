@@ -37,5 +37,10 @@ func _get_drop_items() -> Dictionary:
 
 
 func _drop_item(_item_name: String, _item_data: Dictionary) -> void:
-	print("Nome do item: "+ _item_name)
-	print("Dados do item: "+ str(_item_data))
+	var _collectable: CollectableItem = _COLLECTABLE_ITEM.instantiate()
+	_collectable.item_texture = _item_data["path"]
+	_collectable.item_data = {
+		_item_name: _item_data
+	}
+	_collectable.global_position = global_position
+	get_tree().root.call_deferred("add_child", _collectable)
