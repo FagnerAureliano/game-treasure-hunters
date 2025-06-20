@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://iscnkya5cp4l"]
+[gd_scene load_steps=9 format=3 uid="uid://iscnkya5cp4l"]
 
 [ext_resource type="Script" uid="uid://ds4lj881e0m66" path="res://interface/inventory/inventory_slot.gd" id="1_74ims"]
-[ext_resource type="Texture2D" uid="uid://c5q45j1bme4fx" path="res://collectables_by_drop/pink_star/pink_star/pink_star_legs.png" id="1_nfs7e"]
+[ext_resource type="FontFile" uid="uid://durtnc0bh7ls6" path="res://interface/fonts/old_style/njo_14.ttf" id="2_74ims"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74ims"]
 
@@ -13,7 +13,15 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72kyd"]
 
-[node name="InventorySlot" type="Button"]
+[sub_resource type="LabelSettings" id="LabelSettings_vrwor"]
+line_spacing = 0.0
+font = ExtResource("2_74ims")
+font_size = 14
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 1)
+
+[node name="InventorySlot" type="Button" node_paths=PackedStringArray("_slot_label", "_slot_texture")]
 custom_minimum_size = Vector2(20, 20)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_74ims")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_vrwor")
@@ -22,6 +30,8 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_vacr2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_72kyd")
 flat = true
 script = ExtResource("1_74ims")
+_slot_label = NodePath("Label")
+_slot_texture = NodePath("SlotTexture")
 
 [node name="SlotTexture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,6 +46,14 @@ offset_right = 10.0
 offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_nfs7e")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_right = 5.0
+offset_bottom = 14.0
+label_settings = SubResource("LabelSettings_vrwor")
+horizontal_alignment = 2
+vertical_alignment = 2

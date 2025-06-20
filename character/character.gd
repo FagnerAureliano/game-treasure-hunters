@@ -150,7 +150,7 @@ func _knockback(_entity: BaseEnemy) -> void:
 	_on_knockback = true
 	
 func collect_item(_item:Dictionary)-> void: 
-	print("Item coletad" + str(_item))
+	#print("Item coletad" + str(_item))
 	_inventory.add_item(_item)
 
 func _attack_animation_handler(_prefix:String, _index_limit: int, _on_air: bool = false) -> void:

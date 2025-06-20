@@ -19,6 +19,9 @@ func add_item(_item:Dictionary) -> void:
 		if _slot_keys[0] == _item.keys()[0]:
 			if _item[_item.keys()[0]]["type"] != "equipment":
 				_inventory_data[_slot][_slot_item_name]["amount"] += 1
+				
+				global.ui_inventory.update_slot(_slot,_inventory_data[_slot][_slot_item_name])
+				
 				return
 
 
@@ -28,4 +31,7 @@ func add_item(_item:Dictionary) -> void:
 			var _slot_keys: Array = _inventory_data[_slot].keys()
 			var _slot_item_name: String  = _slot_keys[0]
 			_inventory_data[_slot][_slot_item_name]["amount"] = 1
+			
+			global.ui_inventory.update_slot(_slot,_inventory_data[_slot][_slot_item_name])
+			
 			break

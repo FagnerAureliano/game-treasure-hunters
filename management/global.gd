@@ -2,6 +2,8 @@ extends Node
 
 class_name Global
 
+var ui_inventory: UIInventory = null
+
 func spawn_effect(
 	_path: String, 
 	_offset: Vector2,

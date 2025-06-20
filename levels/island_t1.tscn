@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b02sgv6yl4usl"]
+[gd_scene load_steps=5 format=3 uid="uid://b02sgv6yl4usl"]
 
 [ext_resource type="PackedScene" uid="uid://cbcxsmcpgvu80" path="res://levels/base_level.tscn" id="1_h1j06"]
 [ext_resource type="PackedScene" uid="uid://bf86hmlhbis01" path="res://collectables/sword/collectable_sword.tscn" id="2_t7ibw"]
 [ext_resource type="PackedScene" uid="uid://dsltfhsvqrxn8" path="res://entities/pink_star/pink_star.tscn" id="3_xl1mi"]
+[ext_resource type="PackedScene" uid="uid://qigtj132lql4" path="res://interface/hud.tscn" id="4_pciyg"]
 
 [node name="IslandT1" instance=ExtResource("1_h1j06")]
 
@@ -24,3 +25,5 @@ position = Vector2(242, 201)
 
 [node name="PinkStar2" parent="Enemies" index="1" instance=ExtResource("3_xl1mi")]
 position = Vector2(566, 201)
+
+[node name="HUD" parent="." index="5" instance=ExtResource("4_pciyg")]
