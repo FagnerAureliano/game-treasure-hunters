@@ -15,6 +15,8 @@ var _direction: Vector2 = Vector2.ZERO
 var _player_in_range: BaseCharacter = null
 var _can_play_dead_ground_animation: bool = true
 
+var _drop_items_list: Dictionary = {}
+
 @export_category("Objects")
 @export var _enemy_texture: EnemyTexture
 @export var _floor_detection_ray: RayCast2D
@@ -31,7 +33,11 @@ var _can_play_dead_ground_animation: bool = true
 
 func _ready() -> void:
 	_direction = [Vector2(-1,0), Vector2(1,0)].pick_random()
+	_drop_items_list = _get_drop_items()
 	_update_direction()
+
+func _get_drop_items() -> Dictionary:
+	return {}
 
 func _process(_delta: float) -> void:
 	if _on_knockback:
@@ -135,6 +141,19 @@ func _knockback(_entity: BaseCharacter) -> void:
 func _kill() -> void: 
 	_enemy_texture.action_animate("dead_hit")
 	_is_alive = false
+	
+	for _item in _drop_items_list:
+		var _item_spawn_probability: float = _drop_items_list[_item]["spawn_probability"]
+		var _rng: float = randf()
+		print("Rng do item" + str(_rng))
+		print("Prob do item"+ str( _item_spawn_probability))
+		
+		if _rng < _item_spawn_probability:
+			_drop_item(_item, _drop_items_list[_item])
+ 
+
+func _drop_item(_item_name: String, _item_data: Dictionary) -> void:
+	pass
 
 func _on_detection_area_body_entered(_body: Node2D) -> void:
 	if _body is BaseCharacter:

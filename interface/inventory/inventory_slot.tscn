@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://iscnkya5cp4l"]
+
+[ext_resource type="Script" uid="uid://ds4lj881e0m66" path="res://interface/inventory/inventory_slot.gd" id="1_74ims"]
+[ext_resource type="Texture2D" uid="uid://c5q45j1bme4fx" path="res://collectables_by_drop/pink_star/pink_star/pink_star_legs.png" id="1_nfs7e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_74ims"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrwor"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ghhme"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vacr2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72kyd"]
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(20, 20)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_74ims")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_vrwor")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ghhme")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vacr2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_72kyd")
+flat = true
+script = ExtResource("1_74ims")
+
+[node name="SlotTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nfs7e")
+expand_mode = 1
+stretch_mode = 5

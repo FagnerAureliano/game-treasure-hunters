@@ -406,7 +406,7 @@ one_shot = true
 
 [node name="AttackArea" type="Area2D" parent="."]
 script = ExtResource("55_dg8ty")
-_attack_damage = 4
+_attack_damage = 10
 
 [node name="Collision" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(24, 0)
