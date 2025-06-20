@@ -424,6 +424,9 @@ one_shot = true
 [node name="CharacterInventory" type="Node" parent="."]
 script = ExtResource("72_xdtjf")
 
+[node name="CharacterCamera" type="Camera2D" parent="."]
+offset = Vector2(0, -64)
+
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]
 [connection signal="timeout" from="AttackCombo" to="." method="_on_attack_combo_timeout"]

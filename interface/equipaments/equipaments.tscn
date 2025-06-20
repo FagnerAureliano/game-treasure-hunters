@@ -1,0 +1,153 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl56b2y75b8iq"]
+
+[ext_resource type="Texture2D" uid="uid://bw2i67ulm8dxm" path="res://interface/assets/inventory/inventory_slot.png" id="1_a152b"]
+
+[node name="Equipaments" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -104.0
+offset_right = 138.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="WeaponContainer" type="VBoxContainer" parent="HContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WeaponSlot" type="Button" parent="HContainer/WeaponContainer"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="HContainer/WeaponContainer/WeaponSlot"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 42.0
+texture = ExtResource("1_a152b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemTexture" type="TextureRect" parent="HContainer/WeaponContainer/WeaponSlot/SlotTexture"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ArmorAndConsumableContainer" type="VBoxContainer" parent="HContainer"]
+layout_mode = 2
+
+[node name="ArmorSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="HContainer/ArmorAndConsumableContainer/ArmorSlot"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 42.0
+texture = ExtResource("1_a152b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemTexture" type="TextureRect" parent="HContainer/ArmorAndConsumableContainer/ArmorSlot/SlotTexture"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ConsumableSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="HContainer/ArmorAndConsumableContainer/ConsumableSlot"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 42.0
+texture = ExtResource("1_a152b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemTexture" type="TextureRect" parent="HContainer/ArmorAndConsumableContainer/ConsumableSlot/SlotTexture"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OffHandContainer" type="VBoxContainer" parent="HContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WeaponSlot" type="Button" parent="HContainer/OffHandContainer"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 2
+
+[node name="SlotTexture" type="TextureRect" parent="HContainer/OffHandContainer/WeaponSlot"]
+custom_minimum_size = Vector2(38, 42)
+layout_mode = 0
+offset_right = 38.0
+offset_bottom = 42.0
+texture = ExtResource("1_a152b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemTexture" type="TextureRect" parent="HContainer/OffHandContainer/WeaponSlot/SlotTexture"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
