@@ -6,6 +6,7 @@ const _INVENTORY_SIZE: int = 18
 var _inventory_data: Dictionary = {}
 
 func _ready() -> void:
+	global.inventory = self
 	for _i in _INVENTORY_SIZE:
 		_inventory_data[_i] = {}
 	
@@ -35,3 +36,7 @@ func add_item(_item:Dictionary) -> void:
 			global.ui_inventory.update_slot(_slot,_inventory_data[_slot][_slot_item_name])
 			
 			break
+
+func equip_item(_slot_index: int)-> void:
+	_inventory_data[_slot_index] = {}
+	global.ui_inventory.update_slot(_slot_index, {})

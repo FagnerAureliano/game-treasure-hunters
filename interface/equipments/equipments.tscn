@@ -1,14 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl56b2y75b8iq"]
+[gd_scene load_steps=3 format=3 uid="uid://bl56b2y75b8iq"]
 
-[ext_resource type="Texture2D" uid="uid://bw2i67ulm8dxm" path="res://interface/assets/inventory/inventory_slot.png" id="1_a152b"]
+[ext_resource type="Script" uid="uid://cycwfv0trsh5" path="res://interface/equipments/equipments.gd" id="1_bt1ff"]
+[ext_resource type="Texture2D" uid="uid://bw2i67ulm8dxm" path="res://interface/assets/inventory/inventory_slot.png" id="2_hc0nt"]
 
-[node name="Equipaments" type="Control"]
+[node name="Equipments" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_bt1ff")
 
 [node name="HContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -34,7 +37,7 @@ custom_minimum_size = Vector2(38, 42)
 layout_mode = 0
 offset_right = 38.0
 offset_bottom = 42.0
-texture = ExtResource("1_a152b")
+texture = ExtResource("2_hc0nt")
 expand_mode = 1
 stretch_mode = 5
 
@@ -67,7 +70,7 @@ custom_minimum_size = Vector2(38, 42)
 layout_mode = 0
 offset_right = 38.0
 offset_bottom = 42.0
-texture = ExtResource("1_a152b")
+texture = ExtResource("2_hc0nt")
 expand_mode = 1
 stretch_mode = 5
 
@@ -97,7 +100,7 @@ custom_minimum_size = Vector2(38, 42)
 layout_mode = 0
 offset_right = 38.0
 offset_bottom = 42.0
-texture = ExtResource("1_a152b")
+texture = ExtResource("2_hc0nt")
 expand_mode = 1
 stretch_mode = 5
 
@@ -131,7 +134,7 @@ custom_minimum_size = Vector2(38, 42)
 layout_mode = 0
 offset_right = 38.0
 offset_bottom = 42.0
-texture = ExtResource("1_a152b")
+texture = ExtResource("2_hc0nt")
 expand_mode = 1
 stretch_mode = 5
 

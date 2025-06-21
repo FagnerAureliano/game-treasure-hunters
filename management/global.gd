@@ -2,7 +2,9 @@ extends Node
 
 class_name Global
 
+var inventory: CharacterInventory = null
 var ui_inventory: UIInventory = null
+var ui_equipments: UIEquipments = null
 
 func spawn_effect(
 	_path: String, 

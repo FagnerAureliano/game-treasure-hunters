@@ -18,3 +18,7 @@ func _ready() -> void:
 func update_slot(_index: int, _slot_data: Dictionary) -> void:
 	var _current_slot:UUInventorySlot = _slots_container.get_child(_index)
 	_current_slot.update(_slot_data)
+
+
+func _on_close_button_pressed() -> void:
+	hide()

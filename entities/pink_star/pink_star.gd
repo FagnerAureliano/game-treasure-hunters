@@ -25,13 +25,14 @@ func _get_drop_items() -> Dictionary:
 		},
 		"pink_star_legs": {
 			"path": "res://collectables_by_drop/pink_star/pink_star/pink_star_legs.png",
-			"type": "equipament",
+			"type": "equipment",
 			"value": 25,
-			"spawn_probability": 0.05,  #5%
+			"spawn_probability": 1.0,  #5%
 			"attributes":{
 				"move_speed": 16,
 				"defense": 1
-			}
+			}, 
+			"equipment_type_name": "armor"
 		},
 	}
 
