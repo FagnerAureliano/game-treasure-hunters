@@ -32,7 +32,7 @@ grow_vertical = 0
 layout_mode = 2
 alignment = 1
 
-[node name="WeaponSlot" type="Button" parent="HContainer/WeaponContainer"]
+[node name="WeaponSlot" type="Button" parent="HContainer/WeaponContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
 
@@ -65,7 +65,7 @@ stretch_mode = 5
 [node name="ArmorAndConsumableContainer" type="VBoxContainer" parent="HContainer"]
 layout_mode = 2
 
-[node name="ArmorSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer"]
+[node name="ArmorSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
 
@@ -95,7 +95,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ConsumableSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer"]
+[node name="ConsumableSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
 
@@ -129,7 +129,7 @@ stretch_mode = 5
 layout_mode = 2
 alignment = 1
 
-[node name="OffHandSlot" type="Button" parent="HContainer/OffHandContainer"]
+[node name="OffHandSlot" type="Button" parent="HContainer/OffHandContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
 
