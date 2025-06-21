@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 class_name BaseCharacter
+
+const _THROWABLE_SWORD: PackedScene = preload("res://throwables/character_sword/character_sword.tscn")
+
 var _can_play_dead_ground_animation: bool = true
 var _on_knockback: bool = false
 var _has_sword: bool = false
@@ -11,7 +14,10 @@ var _jump_count = 0
 var _attack_index: int = 1
 var _air_attack_count: int = 0
 
-const _THROWABLE_SWORD: PackedScene = preload("res://throwables/character_sword/character_sword.tscn")
+var _additional_attributes: Dictionary = {
+	"move_speed": 0,
+	"defense": 0
+}
 
 @export_category('Variables')
 @export var _speed: float = 200.0
@@ -24,6 +30,20 @@ const _THROWABLE_SWORD: PackedScene = preload("res://throwables/character_sword/
 @export var _attack_combo: Timer
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
+
+func _ready() -> void:
+	global.character = self
+
+func reset_bonus_attributes() -> void:
+	_additional_attributes = {
+	"move_speed": 0,
+	"defense": 0
+}
+	
+func increase_bonus_attributes(_attributes: Dictionary) -> void:
+	for _type in _attributes:
+		for _attribute in _attributes[_type]:
+			_additional_attributes[_attribute] += _attributes[_type][_attribute]
 
 func _process(_delta: float) -> void:
 	if _on_knockback: 
@@ -91,10 +111,10 @@ func _horizontal_movement() -> void:
 	var _direction := Input.get_axis("move_left", "move_right") 
 	
 	if _direction:
-		velocity.x = _direction * _speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, _speed)
-	pass
+		velocity.x = _direction * (_speed + _additional_attributes["move_speed"]) 
+		return
+	velocity.x = move_toward(velocity.x, 0, _speed)
+	
 
 func _attack_handler() -> void:
 	if not _has_sword:
@@ -134,7 +154,8 @@ func update_sword_state(_state: bool) -> void:
 func update_health(_value: int, _entity) -> void:
 	_knockback(_entity)
 	_knockback_timer.start()
-	_character_health -= _value
+	var _new_value: int = _value -  _additional_attributes["defense"]
+	_character_health -= _new_value
 	
 	if _character_health <= 0:
 		_is_alive = false
@@ -149,8 +170,7 @@ func _knockback(_entity: BaseEnemy) -> void:
 	velocity.y = -1 * _knockback_speed
 	_on_knockback = true
 	
-func collect_item(_item:Dictionary)-> void: 
-	#print("Item coletad" + str(_item))
+func collect_item(_item:Dictionary)-> void:  
 	_inventory.add_item(_item)
 
 func _attack_animation_handler(_prefix:String, _index_limit: int, _on_air: bool = false) -> void:

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cycwfv0trsh5" path="res://interface/equipments/equipments.gd" id="1_bt1ff"]
 [ext_resource type="Texture2D" uid="uid://bw2i67ulm8dxm" path="res://interface/assets/inventory/inventory_slot.png" id="2_hc0nt"]
 
-[node name="Equipments" type="Control"]
+[node name="Equipments" type="Control" node_paths=PackedStringArray("_weapon_slot", "_armor_slot", "_consumable_slot", "_offhand_slot")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_bt1ff")
+_weapon_slot = NodePath("HContainer/WeaponContainer/WeaponSlot")
+_armor_slot = NodePath("HContainer/ArmorAndConsumableContainer/ArmorSlot")
+_consumable_slot = NodePath("HContainer/ArmorAndConsumableContainer/ConsumableSlot")
+_offhand_slot = NodePath("HContainer/OffHandContainer/OffHandSlot")
 
 [node name="HContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -125,11 +129,11 @@ stretch_mode = 5
 layout_mode = 2
 alignment = 1
 
-[node name="WeaponSlot" type="Button" parent="HContainer/OffHandContainer"]
+[node name="OffHandSlot" type="Button" parent="HContainer/OffHandContainer"]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
 
-[node name="SlotTexture" type="TextureRect" parent="HContainer/OffHandContainer/WeaponSlot"]
+[node name="SlotTexture" type="TextureRect" parent="HContainer/OffHandContainer/OffHandSlot"]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 0
 offset_right = 38.0
@@ -138,7 +142,7 @@ texture = ExtResource("2_hc0nt")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ItemTexture" type="TextureRect" parent="HContainer/OffHandContainer/WeaponSlot/SlotTexture"]
+[node name="ItemTexture" type="TextureRect" parent="HContainer/OffHandContainer/OffHandSlot/SlotTexture"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 8

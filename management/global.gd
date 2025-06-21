@@ -2,6 +2,7 @@ extends Node
 
 class_name Global
 
+var character: BaseCharacter = null
 var inventory: CharacterInventory = null
 var ui_inventory: UIInventory = null
 var ui_equipments: UIEquipments = null

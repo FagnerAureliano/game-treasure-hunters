@@ -38,5 +38,12 @@ func add_item(_item:Dictionary) -> void:
 			break
 
 func equip_item(_slot_index: int)-> void:
+	var _slot_keys: Array = _inventory_data[_slot_index].keys()
+	var _slot_item_name: String  = _slot_keys[0]
+	
+	global.ui_equipments.equip_item({
+		_slot_item_name: _inventory_data[_slot_index][_slot_item_name]
+	})
+	
 	_inventory_data[_slot_index] = {}
 	global.ui_inventory.update_slot(_slot_index, {})

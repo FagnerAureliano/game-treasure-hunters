@@ -27,5 +27,5 @@ func _on_pressed() -> void:
 		return
 	
 	if _item["type"] == "equipment":
-		print(_item)
+		#print(_item)
 		global.inventory.equip_item(get_index())
