@@ -33,22 +33,23 @@ func _on_button_pressed(_button_pressed:Button) -> void:
 	match _button_pressed.name:
 		"ConsumableSlot":
 			_equipment_slot_type = "consumable"
-			pass
+
 		"WeaponSlot":
 			_attributes_increased["weapon"] = {}
 			_equipment_slot_type = "weapon"
-			pass
+
 		"ArmorSlot":
 			_attributes_increased["armor"] = {}
 			_equipment_slot_type = "armor"
-			pass
+
 		"OffHandSlot":
 			_attributes_increased["offhand"] = {}
 			_equipment_slot_type = "offhand"
-			pass
 
 	var _item_data: Dictionary = _equipments_inventory[_equipment_slot_type]
 	global.inventory.add_item(_item_data)
+	_equipments_inventory[_equipment_slot_type] = {}
+
 	_item_slot.texture = null
 	global.character.reset_bonus_attributes()
 	global.character.increase_bonus_attributes(_attributes_increased) 
@@ -72,10 +73,13 @@ func equip_item(_item: Dictionary) -> void:
 				_attributes_increased["offhand"] = _item_data["attributes"] 
 			"consumable":
 				_target_slot = _consumable_slot 
-
+		if not _equipments_inventory[_equipment_type].is_empty():
+			global.inventory.add_item(_equipments_inventory[_equipment_type])
+			
 		_equipments_inventory[_equipment_type] = {
 			_item_name: _item_data
 		}
+	
 	_target_slot.get_node("SlotTexture/ItemTexture").texture = load(_item_data["path"])
 	
 	global.character.reset_bonus_attributes()
