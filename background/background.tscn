@@ -81,8 +81,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Background" type="ParallaxBackground"]
+[node name="Background" type="ParallaxBackground" node_paths=PackedStringArray("_additional_water", "_additional_sky")]
 script = ExtResource("1_5brtl")
+_additional_water = NodePath("AdditonalWater")
+_additional_sky = NodePath("AdditonalSky")
 
 [node name="AdditonalSky" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(1, 0.1)
