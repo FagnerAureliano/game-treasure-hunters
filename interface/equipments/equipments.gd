@@ -23,6 +23,7 @@ func _ready() -> void:
 		
 func _on_button_pressed(_button_pressed:Button) -> void:
 	var _item_slot: TextureRect = _button_pressed.get_node("SlotTexture/ItemTexture")
+	_button_pressed.release_focus()
 	if _item_slot.texture == null:
 		print("slot vazio!")
 		return

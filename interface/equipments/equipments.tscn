@@ -1,7 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl56b2y75b8iq"]
+[gd_scene load_steps=27 format=3 uid="uid://bl56b2y75b8iq"]
 
 [ext_resource type="Script" uid="uid://cycwfv0trsh5" path="res://interface/equipments/equipments.gd" id="1_bt1ff"]
 [ext_resource type="Texture2D" uid="uid://bw2i67ulm8dxm" path="res://interface/assets/inventory/inventory_slot.png" id="2_hc0nt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gn6wl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rdh3i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ioct2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3eq30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6nsl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2vs5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ebbou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrepg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1i1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tp5op"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f2lvw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8n2u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5s4aq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5yvvt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ojti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgh76"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1pk8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hjh82"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dklw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yt4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uju4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m76jk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xutt8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4mr1"]
 
 [node name="Equipments" type="Control" node_paths=PackedStringArray("_weapon_slot", "_armor_slot", "_consumable_slot", "_offhand_slot")]
 layout_mode = 3
@@ -35,6 +83,12 @@ alignment = 1
 [node name="WeaponSlot" type="Button" parent="HContainer/WeaponContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gn6wl")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rdh3i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ioct2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3eq30")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_b6nsl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w2vs5")
 
 [node name="SlotTexture" type="TextureRect" parent="HContainer/WeaponContainer/WeaponSlot"]
 custom_minimum_size = Vector2(38, 42)
@@ -68,6 +122,12 @@ layout_mode = 2
 [node name="ArmorSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ebbou")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jrepg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_c1i1h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tp5op")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f2lvw")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_y8n2u")
 
 [node name="SlotTexture" type="TextureRect" parent="HContainer/ArmorAndConsumableContainer/ArmorSlot"]
 custom_minimum_size = Vector2(38, 42)
@@ -98,6 +158,12 @@ stretch_mode = 5
 [node name="ConsumableSlot" type="Button" parent="HContainer/ArmorAndConsumableContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5s4aq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5yvvt")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0ojti")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vgh76")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_b1pk8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hjh82")
 
 [node name="SlotTexture" type="TextureRect" parent="HContainer/ArmorAndConsumableContainer/ConsumableSlot"]
 custom_minimum_size = Vector2(38, 42)
@@ -132,6 +198,12 @@ alignment = 1
 [node name="OffHandSlot" type="Button" parent="HContainer/OffHandContainer" groups=["equipment_slot"]]
 custom_minimum_size = Vector2(38, 42)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2dklw")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yt4o")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_uju4m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_m76jk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xutt8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l4mr1")
 
 [node name="SlotTexture" type="TextureRect" parent="HContainer/OffHandContainer/OffHandSlot"]
 custom_minimum_size = Vector2(38, 42)
