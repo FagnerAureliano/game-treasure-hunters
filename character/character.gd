@@ -30,6 +30,7 @@ var _additional_attributes: Dictionary = {
 @export var _attack_combo: Timer
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
+@export var _character_camera: Camera2D
 
 func _ready() -> void:
 	global.character = self
@@ -44,6 +45,12 @@ func increase_bonus_attributes(_attributes: Dictionary) -> void:
 	for _type in _attributes:
 		for _attribute in _attributes[_type]:
 			_additional_attributes[_attribute] += _attributes[_type][_attribute]
+
+func disable() -> void:
+	_is_alive = false 
+	velocity.x = 0
+	_character_camera.limit_bottom = int(global_position.y) + int(360.0/2.0)
+
 
 func _process(_delta: float) -> void:
 	if _on_knockback: 
@@ -98,7 +105,7 @@ func _vertical_movement(_delta: float) -> void:
 		velocity += get_gravity() * _delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and _jump_count < 2:
+	if Input.is_action_just_pressed("jump") and _jump_count < 2 and _is_alive:
 		_jump_count += 1
 		_attack_index = 1
 		velocity.y = _jump_velocity

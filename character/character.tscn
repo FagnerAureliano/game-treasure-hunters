@@ -386,13 +386,14 @@ size = Vector2(18, 24)
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpbs7"]
 radius = 16.0
 
-[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_inventory", "_attack_combo", "_character_texture", "_knockback_timer")]
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("_inventory", "_attack_combo", "_character_texture", "_knockback_timer", "_character_camera")]
 script = ExtResource("1_o6jyn")
 _speed = 150.0
 _inventory = NodePath("CharacterInventory")
 _attack_combo = NodePath("AttackCombo")
 _character_texture = NodePath("Texture")
 _knockback_timer = NodePath("KnockbackTimer")
+_character_camera = NodePath("CharacterCamera")
 
 [node name="Texture" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("_attack_area_colision")]
 sprite_frames = SubResource("SpriteFrames_qkjfd")

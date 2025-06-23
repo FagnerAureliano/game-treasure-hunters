@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvd38jdi3io32"]
+
+[ext_resource type="Texture2D" uid="uid://dnrbn64r2dwbk" path="res://interactables/water/1.png" id="1_5uxom"]
+[ext_resource type="Script" uid="uid://cggm4jg377o18" path="res://interactables/water/water.gd" id="1_y18kk"]
+[ext_resource type="Texture2D" uid="uid://uprej62mfn8q" path="res://interactables/water/2.png" id="2_t32ge"]
+[ext_resource type="Texture2D" uid="uid://ggib04fq2h5j" path="res://interactables/water/3.png" id="3_y18kk"]
+[ext_resource type="Texture2D" uid="uid://cgb7t7bi2yst8" path="res://interactables/water/4.png" id="4_irap4"]
+[ext_resource type="Texture2D" uid="uid://0uw6ppjvkexj" path="res://interactables/water/water_extension.png" id="5_t32ge"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nmwc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5uxom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t32ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y18kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_irap4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21t4g"]
+size = Vector2(96, 32.25)
+
+[node name="Water" type="Area2D" node_paths=PackedStringArray("_time_to_kill")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_y18kk")
+_time_to_kill = NodePath("TimeToKill")
+
+[node name="Water" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3nmwc")
+autoplay = "default"
+frame_progress = 0.65217
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.125)
+shape = SubResource("RectangleShape2D_21t4g")
+
+[node name="Extension" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 320)
+offset_left = -48.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 336.0
+texture = ExtResource("5_t32ge")
+
+[node name="TimeToKill" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="TimeToKill" to="." method="_on_time_to_kill_timeout"]

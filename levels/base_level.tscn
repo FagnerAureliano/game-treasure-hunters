@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbcxsmcpgvu80"]
+[gd_scene load_steps=5 format=3 uid="uid://cbcxsmcpgvu80"]
 
 [ext_resource type="PackedScene" uid="uid://cot8rw6n4yijh" path="res://terrain/terrain.tscn" id="1_ew5uy"]
 [ext_resource type="PackedScene" uid="uid://bl10vj1e7gx37" path="res://background/background.tscn" id="2_63c5o"]
 [ext_resource type="PackedScene" uid="uid://celbgvgemyqia" path="res://character/character.tscn" id="3_63c5o"]
+[ext_resource type="PackedScene" uid="uid://qigtj132lql4" path="res://interface/hud.tscn" id="4_satuh"]
 
 [node name="BaseLevel" type="Node2D"]
 
+[node name="WaterLayer" type="Node2D" parent="."]
+
 [node name="Terrain" parent="." instance=ExtResource("1_ew5uy")]
-position = Vector2(0, -12)
 
 [node name="Background" parent="." node_paths=PackedStringArray("_character") instance=ExtResource("2_63c5o")]
 _character = NodePath("../Character")
@@ -15,3 +17,5 @@ _character = NodePath("../Character")
 [node name="Character" parent="." instance=ExtResource("3_63c5o")]
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("4_satuh")]
