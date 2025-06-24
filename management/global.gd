@@ -7,6 +7,8 @@ var inventory: CharacterInventory = null
 var ui_inventory: UIInventory = null
 var ui_equipments: UIEquipments = null
 
+var current_scene_path: String
+
 func spawn_effect(
 	_path: String, 
 	_offset: Vector2,

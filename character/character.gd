@@ -50,7 +50,7 @@ func disable() -> void:
 	_is_alive = false 
 	velocity.x = 0
 	_character_camera.limit_bottom = int(global_position.y) + int(360.0/2.0)
-
+	transition_screen.fade_in()
 
 func _process(_delta: float) -> void:
 	if _on_knockback: 

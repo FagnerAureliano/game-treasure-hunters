@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbcxsmcpgvu80"]
+[gd_scene load_steps=6 format=3 uid="uid://cbcxsmcpgvu80"]
 
 [ext_resource type="PackedScene" uid="uid://cot8rw6n4yijh" path="res://terrain/terrain.tscn" id="1_ew5uy"]
+[ext_resource type="Script" uid="uid://beer0ypjq7ckb" path="res://levels/base_level.gd" id="1_p5284"]
 [ext_resource type="PackedScene" uid="uid://bl10vj1e7gx37" path="res://background/background.tscn" id="2_63c5o"]
 [ext_resource type="PackedScene" uid="uid://celbgvgemyqia" path="res://character/character.tscn" id="3_63c5o"]
 [ext_resource type="PackedScene" uid="uid://qigtj132lql4" path="res://interface/hud.tscn" id="4_satuh"]
 
 [node name="BaseLevel" type="Node2D"]
+script = ExtResource("1_p5284")
 
 [node name="WaterLayer" type="Node2D" parent="."]
 

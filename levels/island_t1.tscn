@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvd38jdi3io32" path="res://interactables/water/water.tscn" id="4_pciyg"]
 
 [node name="IslandT1" instance=ExtResource("1_h1j06")]
+_scene_path = "res://levels/island_t1.tscn"
 
 [node name="WaterL1" parent="WaterLayer" index="0" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
