@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxr0cvdkvl5om"]
+
+[ext_resource type="Script" uid="uid://dq3eiy780vbif" path="res://interactables/components/interactable_component.gd" id="1_n1gpk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rppy2"]
+
+[node name="InteractableComponent" type="Area2D" node_paths=PackedStringArray("_sprite", "_body_collision")]
+script = ExtResource("1_n1gpk")
+_sprite = NodePath("Texture")
+_body_collision = NodePath("Body/Collision")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Body" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Body"]
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rppy2")
+
+[connection signal="area_entered" from="." to="." method="_on_interactable_area_entered"]
