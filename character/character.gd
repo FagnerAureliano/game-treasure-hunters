@@ -9,7 +9,6 @@ var _on_knockback: bool = false
 var _has_sword: bool = false
 var _on_floor: bool = true
 var _is_alive: bool = true
-var _is_in_cinematic: bool = true
 
 var _jump_count = 0
 var _attack_index: int = 1
@@ -32,6 +31,7 @@ var _additional_attributes: Dictionary = {
 @export var _character_texture: CharacterTexture
 @export var _knockback_timer: Timer
 @export var _character_camera: Camera2D
+@export var _is_in_cinematic: bool = true
 
 func _ready() -> void:
 	global.character = self

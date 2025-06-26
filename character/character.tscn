@@ -427,7 +427,6 @@ script = ExtResource("72_xdtjf")
 
 [node name="CharacterCamera" type="Camera2D" parent="."]
 offset = Vector2(0, -64)
-enabled = false
 
 [connection signal="animation_finished" from="Texture" to="Texture" method="_on_animation_finished"]
 [connection signal="frame_changed" from="Texture" to="Texture" method="_on_frame_changed"]

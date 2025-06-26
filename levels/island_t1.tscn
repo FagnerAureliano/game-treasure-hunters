@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b02sgv6yl4usl"]
+[gd_scene load_steps=5 format=3 uid="uid://b02sgv6yl4usl"]
 
 [ext_resource type="PackedScene" uid="uid://cbcxsmcpgvu80" path="res://levels/base_level.tscn" id="1_h1j06"]
 [ext_resource type="PackedScene" uid="uid://bf86hmlhbis01" path="res://collectables/sword/collectable_sword.tscn" id="2_t7ibw"]
-[ext_resource type="PackedScene" uid="uid://dsltfhsvqrxn8" path="res://entities/pink_star/pink_star.tscn" id="3_xl1mi"]
 [ext_resource type="PackedScene" uid="uid://bvd38jdi3io32" path="res://interactables/water/water.tscn" id="4_pciyg"]
 [ext_resource type="PackedScene" uid="uid://celbgvgemyqia" path="res://character/character.tscn" id="5_3cvte"]
 
@@ -11,103 +10,101 @@ _scene_path = "res://levels/island_t1.tscn"
 
 [node name="WaterL1" parent="WaterLayer" index="0" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-6, 287)
+position = Vector2(-6, 337)
 
 [node name="WaterL2" parent="WaterLayer" index="1" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-102, 287)
+position = Vector2(-102, 337)
 
 [node name="WaterL3" parent="WaterLayer" index="2" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-198, 287)
+position = Vector2(-198, 337)
 
 [node name="WaterL13" parent="WaterLayer" index="3" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(570, 287)
+position = Vector2(570, 337)
 
 [node name="WaterL14" parent="WaterLayer" index="4" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(474, 287)
+position = Vector2(474, 337)
 
 [node name="WaterL15" parent="WaterLayer" index="5" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(378, 287)
+position = Vector2(378, 337)
 
 [node name="WaterL10" parent="WaterLayer" index="6" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(282, 287)
+position = Vector2(282, 337)
 
 [node name="WaterL16" parent="WaterLayer" index="7" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(186, 287)
+position = Vector2(186, 337)
 
 [node name="WaterL17" parent="WaterLayer" index="8" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(954, 287)
+position = Vector2(954, 337)
 
 [node name="WaterL18" parent="WaterLayer" index="9" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(858, 287)
+position = Vector2(858, 337)
 
 [node name="WaterL19" parent="WaterLayer" index="10" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(762, 287)
+position = Vector2(762, 337)
 
 [node name="WaterL21" parent="WaterLayer" index="11" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(1241, 287)
+position = Vector2(1241, 337)
 
 [node name="WaterL22" parent="WaterLayer" index="12" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(1145, 287)
+position = Vector2(1145, 337)
 
 [node name="WaterL23" parent="WaterLayer" index="13" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(1049, 287)
+position = Vector2(1049, 337)
 
 [node name="WaterL20" parent="WaterLayer" index="14" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(666, 287)
+position = Vector2(666, 337)
 
 [node name="WaterL12" parent="WaterLayer" index="15" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(90, 287)
+position = Vector2(90, 337)
 
 [node name="WaterL4" parent="WaterLayer" index="16" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-294, 287)
+position = Vector2(-294, 337)
 
 [node name="WaterL5" parent="WaterLayer" index="17" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-390, 287)
+position = Vector2(-390, 337)
 
 [node name="WaterL6" parent="WaterLayer" index="18" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-486, 287)
+position = Vector2(-486, 337)
 
 [node name="WaterL7" parent="WaterLayer" index="19" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-582, 287)
+position = Vector2(-582, 337)
 
 [node name="WaterL8" parent="WaterLayer" index="20" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-678, 287)
+position = Vector2(-678, 337)
 
 [node name="WaterL9" parent="WaterLayer" index="21" instance=ExtResource("4_pciyg")]
 show_behind_parent = true
-position = Vector2(-774, 287)
+position = Vector2(-774, 337)
 
 [node name="Terrain" parent="." index="1"]
-layer_0/tile_data = PackedInt32Array(524289, 0, 0, 524290, 65536, 0, 524291, 65536, 0, 524292, 65536, 0, 524293, 65536, 0, 524294, 65536, 0, 524295, 65536, 0, 524296, 131072, 0, 589832, 131072, 1, 589831, 65536, 1, 589830, 65536, 1, 589829, 65536, 1, 589828, 65536, 1, 589827, 65536, 1, 589826, 65536, 1, 589825, 0, 1, 655361, 0, 2, 655362, 65536, 2, 655363, 65536, 2, 655364, 65536, 2, 655365, 65536, 2, 655366, 65536, 2, 655367, 65536, 2, 655368, 131072, 2, 655374, 65536, 2, 589838, 65536, 1, 589839, 65536, 1, 589840, 65536, 1, 589841, 65536, 1, 655375, 65536, 2, 655376, 65536, 2, 655377, 65536, 2, 655378, 65536, 2, 589842, 65536, 1, 524306, 65536, 0, 524305, 65536, 0, 524304, 65536, 0, 524303, 65536, 0, 524302, 65536, 0, 262153, 0, 2, 262154, 65536, 2, 262155, 131072, 2, 196617, 0, 0, 196618, 65536, 0, 524301, 65536, 0, 589837, 65536, 1, 655373, 65536, 2, 524300, 0, 0, 589836, 0, 1, 655372, 0, 2, 65539, 0, 4, 65540, 65536, 4, 65541, 1048576, 3, 524307, 65536, 0, 524308, 131072, 0, 589844, 131072, 1, 589843, 65536, 1, 655380, 131072, 2, 655379, 65536, 2, 327695, 131072, 0, 393231, 589824, 4, 393232, 131072, 4, 393230, 655360, 4, 131077, 983040, 4, 131078, 131072, 4, 327694, 0, 0, 393229, 0, 4, 196619, 131072, 0)
+layer_0/tile_data = PackedInt32Array(589841, 131072, 0, 655377, 131072, 1, 655376, 65536, 1, 655375, 65536, 1, 655374, 65536, 1, 655373, 65536, 1, 655372, 65536, 1, 655371, 65536, 1, 655370, 65536, 1, 655369, 65536, 1, 589840, 65536, 0, 589839, 65536, 0, 589838, 65536, 0, 589837, 65536, 0, 589836, 65536, 0, 589835, 65536, 0, 589834, 65536, 0, 589833, 65536, 0, 589832, 0, 0, 655368, 0, 1, 720904, 0, 2, 720905, 65536, 2, 720906, 65536, 2, 720907, 65536, 2, 720908, 65536, 2, 720909, 65536, 2, 720910, 65536, 2, 720911, 65536, 2, 720912, 65536, 2, 720913, 131072, 2)
+
+[node name="Background" parent="." index="2" node_paths=PackedStringArray("_character")]
+_character = NodePath("../Character")
 
 [node name="CollectableSword" parent="." index="3" instance=ExtResource("2_t7ibw")]
-position = Vector2(126, 242)
-
-[node name="PinkStar" parent="Enemies" index="0" instance=ExtResource("3_xl1mi")]
-position = Vector2(242, 201)
-
-[node name="PinkStar2" parent="Enemies" index="1" instance=ExtResource("3_xl1mi")]
-position = Vector2(566, 201)
+position = Vector2(445, 281)
 
 [node name="Character" parent="." index="6" instance=ExtResource("5_3cvte")]
-position = Vector2(195, 245)
+position = Vector2(279, 277)
+_is_in_cinematic = false
