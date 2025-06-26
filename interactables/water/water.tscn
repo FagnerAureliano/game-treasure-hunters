@@ -57,5 +57,4 @@ texture = ExtResource("5_t32ge")
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="TimeToKill" to="." method="_on_time_to_kill_timeout"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl8k6mx0ggu4s"]
+
+[ext_resource type="PackedScene" uid="uid://dhwowdep2m6j6" path="res://visual_effects/components/base_effect.tscn" id="1_x7he5"]
+[ext_resource type="Texture2D" uid="uid://by5odgdnfuoua" path="res://visual_effects/water_splash/1/1.png" id="2_j7isr"]
+[ext_resource type="Texture2D" uid="uid://blk61amyrgjrj" path="res://visual_effects/water_splash/1/2.png" id="3_w3huw"]
+[ext_resource type="Texture2D" uid="uid://bibsgfqy0eck0" path="res://visual_effects/water_splash/1/3.png" id="4_h8eq6"]
+[ext_resource type="Texture2D" uid="uid://bnoeirw2i32pd" path="res://visual_effects/water_splash/1/4.png" id="5_0m5d5"]
+[ext_resource type="Texture2D" uid="uid://tf0browutdfa" path="res://visual_effects/water_splash/1/5.png" id="6_ygocq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvfh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j7isr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w3huw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_h8eq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0m5d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ygocq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="WaterSplash1" instance=ExtResource("1_x7he5")]
+sprite_frames = SubResource("SpriteFrames_wvfh0")
+frame = 4
+frame_progress = 1.0

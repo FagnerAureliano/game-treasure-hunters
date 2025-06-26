@@ -9,6 +9,7 @@ var _on_knockback: bool = false
 var _has_sword: bool = false
 var _on_floor: bool = true
 var _is_alive: bool = true
+var _is_in_cinematic: bool = true
 
 var _jump_count = 0
 var _attack_index: int = 1
@@ -35,6 +36,9 @@ var _additional_attributes: Dictionary = {
 func _ready() -> void:
 	global.character = self
 
+func play_cinematic_animartion(_anim_name: String) -> void:
+	_character_texture.play(_anim_name)
+
 func reset_bonus_attributes() -> void:
 	_additional_attributes = {
 	"move_speed": 0,
@@ -52,11 +56,13 @@ func disable() -> void:
 	_character_camera.limit_bottom = int(global_position.y) + int(360.0/2.0)
 	transition_screen.fade_in()
 
-func _process(_delta: float) -> void:
+func _process(_delta: float) -> void: 
 	if _on_knockback: 
 		move_and_slide()
 
 func _physics_process(delta: float) -> void: 
+	if _is_in_cinematic:
+		return
 	_vertical_movement(delta) 
 	if _is_alive == false or _on_knockback: 
 		move_and_slide()
