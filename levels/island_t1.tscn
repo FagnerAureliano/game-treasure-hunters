@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b02sgv6yl4usl"]
+[gd_scene load_steps=7 format=3 uid="uid://b02sgv6yl4usl"]
 
 [ext_resource type="PackedScene" uid="uid://cbcxsmcpgvu80" path="res://levels/base_level.tscn" id="1_h1j06"]
 [ext_resource type="PackedScene" uid="uid://bf86hmlhbis01" path="res://collectables/sword/collectable_sword.tscn" id="2_t7ibw"]
 [ext_resource type="PackedScene" uid="uid://dmljhywhm1y71" path="res://interactables/barrel/barrel.tscn" id="4_3cvte"]
 [ext_resource type="PackedScene" uid="uid://bvd38jdi3io32" path="res://interactables/water/water.tscn" id="4_pciyg"]
 [ext_resource type="PackedScene" uid="uid://celbgvgemyqia" path="res://character/character.tscn" id="5_3cvte"]
+[ext_resource type="PackedScene" uid="uid://bowjl4rqowloe" path="res://interactables/box/box.tscn" id="5_hxymw"]
 
 [node name="IslandT1" instance=ExtResource("1_h1j06")]
 _scene_path = "res://levels/island_t1.tscn"
@@ -111,6 +112,9 @@ position = Vector2(344, 275)
 
 [node name="Barrel2" parent="Interactables" index="1" instance=ExtResource("4_3cvte")]
 position = Vector2(369, 275)
+
+[node name="Box" parent="Interactables" index="2" instance=ExtResource("5_hxymw")]
+position = Vector2(357, 254)
 
 [node name="Character" parent="." index="6" instance=ExtResource("5_3cvte")]
 position = Vector2(279, 277)
