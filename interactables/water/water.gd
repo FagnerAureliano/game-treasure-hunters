@@ -19,11 +19,10 @@ func _on_body_entered(_body: Node2D) -> void:
 			_body.global_position, false 
 		)
 	
-	if _body is BaseCharacter:
-		_time_to_kill.start()
+	if _body is BaseCharacter: 
 		_body.disable()
 
-	if _body is BaseEnemy or _body is CollectableItem :
+	if _body is BaseEnemy or( _body is CollectableItem and _body.is_collectable) :
 		_objects_in_contact.append(_body)
 		_time_to_kill.start()
 

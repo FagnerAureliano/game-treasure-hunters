@@ -2,17 +2,22 @@ extends RigidBody2D
 
 class_name CollectableItem
 
+var is_collectable: bool = true
+
 var item_data:Dictionary = {}
 var item_texture: String
 
 @export_category("Object")
 @export var _item_sprite: Sprite2D
+@export var _animation: AnimationPlayer
 
 @export_category("Variables")
 @export var _horizonal_force: float = 80
 @export var _vertical_force: float = -300
 
 func _ready() -> void:
+	if not is_collectable:
+		_animation.play("kill")
 	_item_sprite.texture = load(item_texture)
 	
 	apply_impulse(
@@ -22,8 +27,10 @@ func _ready() -> void:
 		)
 	)
 
-
 func _on_collectable_area_body_entered(_body: Node2D) -> void:
+	if not is_collectable:
+		return
+		
 	if _body is BaseCharacter:
 		_body.collect_item(item_data)
 		global.spawn_effect(

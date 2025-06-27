@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b533hsswbgot2"]
+[gd_scene load_steps=9 format=3 uid="uid://b533hsswbgot2"]
 
 [ext_resource type="Texture2D" uid="uid://bih6871hcspf5" path="res://collectables_by_drop/pink_star/pink_star/pink_star_head.png" id="1_l8xum"]
 [ext_resource type="Script" uid="uid://ceph2kben4ea0" path="res://collectables/components/collectable_item.gd" id="1_qb0iv"]
@@ -11,12 +11,64 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_jdsub"]
 radius = 12.0
 
-[node name="BaseCollectableItem" type="RigidBody2D" node_paths=PackedStringArray("_item_sprite")]
+[sub_resource type="Animation" id="Animation_qb0iv"]
+resource_name = "kill"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 3.96667, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.96667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jdsub"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dsijn"]
+_data = {
+&"RESET": SubResource("Animation_jdsub"),
+&"kill": SubResource("Animation_qb0iv")
+}
+
+[node name="BaseCollectableItem" type="RigidBody2D" node_paths=PackedStringArray("_item_sprite", "_animation")]
 collision_layer = 2
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_qb0iv")
 script = ExtResource("1_qb0iv")
 _item_sprite = NodePath("Texture")
+_animation = NodePath("LifetimeAnimation")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qb0iv")
@@ -28,5 +80,10 @@ texture = ExtResource("1_l8xum")
 
 [node name="Collision" type="CollisionShape2D" parent="CollectableArea"]
 shape = SubResource("CircleShape2D_jdsub")
+
+[node name="LifetimeAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dsijn")
+}
 
 [connection signal="body_entered" from="CollectableArea" to="." method="_on_collectable_area_body_entered"]

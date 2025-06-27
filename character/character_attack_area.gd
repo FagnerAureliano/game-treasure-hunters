@@ -8,3 +8,6 @@ class_name CharacterAttackArea
 func _on_body_entered(_body: Node2D) -> void:
 	if _body is BaseEnemy:
 		_body.update_health(_attack_damage, get_parent())
+
+func get_damage() -> int:
+	return _attack_damage

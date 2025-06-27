@@ -1,0 +1,3 @@
+extends InteractableComponent
+
+class_name Barrel
